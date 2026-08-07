@@ -39,3 +39,18 @@ CREATE TABLE IF NOT EXISTS audit_log (
     status          VARCHAR(20),
     notes           TEXT
 );
+
+ALTER TABLE raw_prices ADD CONSTRAINT uq_trade_date_ticker UNIQUE (trade_date, ticker);
+
+CREATE TABLE pipeline_runs (
+    run_id SERIAL PRIMARY KEY,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL,
+    duration_seconds DOUBLE PRECISION NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    extracted_rows INTEGER NOT NULL DEFAULT 0,
+    loaded_rows INTEGER NOT NULL DEFAULT 0,
+    validation_errors INTEGER NOT NULL DEFAULT 0,
+    reconciliation_status VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
