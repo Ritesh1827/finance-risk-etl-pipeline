@@ -1,0 +1,6 @@
+ticker,expected_rows,actual_rows,difference,status
+AAPL,502,502,0,OK
+MSFT,502,502,0,OK
+GOOGL,502,502,0,OK
+AMZN,502,502,0,OK
+NVDA,502,502,0,OK
