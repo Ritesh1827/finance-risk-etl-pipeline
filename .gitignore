@@ -3,3 +3,26 @@ venv/
 __pycache__/
 *.pyc
 data/raw/*.csv
+
+# Python
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Environment
+.env
+
+# Raw extracted files
+src/data/raw/
+data/raw/
+
+# Logs
+*.log
+
+# Generated reports
+docs/quarantined_rows.csv
+
+# IDE
+.vscode/
+.idea/
